@@ -1,0 +1,17 @@
+{
+  "author": "George Gooding <george@nettsentrisk.no>",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "glob-base": "^0.3.0"
+  },
+  "description": "File type agnostic globbed webpack entries with watching.",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "globbed-webpack-entries-plugin",
+  "peerDependencies": {
+    "webpack": "4.x"
+  },
+  "private": false,
+  "repository": "https://github.com/Nettsentrisk/globbed-webpack-entries-plugin",
+  "version": "1.0.0"
+}
