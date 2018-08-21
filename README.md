@@ -1,6 +1,6 @@
-﻿# globbed-webpack-entries-plugin
+# globbed-webpack-entries-plugin
 
-Provides a way to glob for entry files in Webpack `watch` and `non-watch` modes.
+Provides a way to glob for entry files in Webpack `watch` and `non-watch` modes, for all file types.
 
 ## Usage
 
@@ -11,7 +11,7 @@ import GlobbedEntriesPlugin from 'globbed-webpack-entries-plugin';
 {
    
     entry: GlobbedEntriesPlugin.entries({
-            global : ['./Scripts/index.js', './Styles/main.scss']
+            global : ['./Scripts/**/*.js', './Styles/**/*.scss']
         }
     )
     
