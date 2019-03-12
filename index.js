@@ -39,20 +39,13 @@ class GlobEntries {
      */
     apply(compiler) {
         if (compiler.hooks) {
-            compiler.hooks.afterCompile.tapAsync(this.constructor.name, this.afterCompile.bind(this));
+            compiler.hooks.afterCompile.tapAsync(this.constructor.name, (compilation, callback) => {
+                for (const directory of directories) {
+                    compilation.contextDependencies.add(path.resolve(compiler.context, directory));
+                }
+                callback();
+            });
         }
-    }
-
-    /**
-     * After compiling, give webpack the globbed files
-     * @param {Object} compilation
-     * @param {Function} callback
-     */
-    afterCompile(compilation, callback) {
-        for (const directory of directories) {
-            compilation.contextDependencies.add(directory);
-        }
-        callback();
     }
 }
 
